@@ -83,6 +83,7 @@ EIAC/
 | Catálogo CAPEC v3.9 | [capecnuevo.xml](capecnuevo.xml) |
 | Procedencia de los datos | [DATASETS.md](DATASETS.md) |
 | Contribuciones de los autores | [CONTRIBUTIONS.md](CONTRIBUTIONS.md) |
+| Forma de citar el software | [CITATION.cff](CITATION.cff) |
 
 
 ---
@@ -269,4 +270,10 @@ Los archivos `.tex` se generan como **material auxiliar** para documentos de inv
 
 ## Licencia y uso
 
-El código desarrollado por los autores se distribuye bajo la licencia MIT, disponible en [LICENSE](LICENSE). Los datasets y fuentes externas conservan sus propias condiciones de uso. El catálogo CAPEC pertenece a [The MITRE Corporation](https://www.mitre.org/), mientras que SR-BH 2020 Multilabel se encuentra publicado en Harvard Dataverse bajo CC0 1.0.
+El código desarrollado por los autores se distribuye bajo la licencia MIT, disponible en [LICENSE](LICENSE). Los datasets y fuentes externas conservan sus propias condiciones de uso. El catálogo CAPEC pertenece a [The MITRE Corporation](https://www.mitre.org/), mientras que SR-BH 2022 Multilabel se encuentra publicado en Harvard Dataverse bajo CC0 1.0.
+
+## Citación
+
+La información bibliográfica para citar esta versión del software se encuentra
+en [CITATION.cff](CITATION.cff). La versión utilizada para la entrega final del
+TFM está identificada con la etiqueta `v1.0.0`.

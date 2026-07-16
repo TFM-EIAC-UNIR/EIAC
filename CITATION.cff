@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "Si utiliza este software, cite el repositorio y el Trabajo Fin de Máster asociado."
+type: software
+title: "EIAC: evaluación de la relevancia informativa de características en datasets basados en CAPEC"
+abstract: >-
+  Implementación en Python del Índice de Entropía Informativa Ajustada de
+  Columna (EIAC), junto con los datasets y resultados de los tres escenarios
+  experimentales utilizados en el Trabajo Fin de Máster.
+authors:
+  - family-names: "Adarme Jaimes"
+    given-names: "Marco Antonio"
+    email: "madarme@ufps.edu.co"
+  - family-names: "Benítez Mejía"
+    given-names: "Ronald Eduardo"
+    email: "ronaldeduardobm@ufps.edu.co"
+  - family-names: "Hernández Lasso"
+    given-names: "Jorge Kevin"
+    email: "jorgekevinhl@ufps.edu.co"
+version: 1.0.0
+date-released: 2026-07-16
+repository-code: "https://github.com/TFM-EIAC-UNIR/EIAC"
+url: "https://github.com/TFM-EIAC-UNIR/EIAC"
+license: MIT
+keywords:
+  - "EIAC"
+  - "entropía de Shannon"
+  - "CAPEC"
+  - "ciberseguridad"
+  - "calidad de datos"
