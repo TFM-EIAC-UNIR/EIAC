@@ -1,0 +1,37 @@
+column,column_type,rows,missing_or_empty_values,unique_values,unique_ratio,entropy_shannon_bits,max_entropy_bits,normalized_entropy,most_common_value,most_common_frequency,classification
+Execution Flow,original,239,376,239,1.0,7.900867,7.900867,1.0,"::STEP:1:PHASE:Explore:DESCRIPTION:[Survey] The attacker surveys the target application, possibly as a valid and authenticated user:TECHNIQUE:Spidering web sites for all available links:TECHNIQUE:Brut",1,alta_variabilidad
+Example Instances,original,269,346,266,0.988848,8.049158,8.055282,0.99924,::The attacker uses relative path traversal to access files in the application. This is an example of accessing user's password file. http://www.example.com/getProfile.jsp?filename=../../../../etc/pas,2,alta_variabilidad
+Description,original,613,2,595,0.970636,9.186302,9.216746,0.996697,This attack pattern has been deprecated.,6,alta_variabilidad
+Mitigations,original,400,215,376,0.94,8.498856,8.554589,0.993485,"::An organization should provide regular, robust cybersecurity training to its employees to prevent social engineering attacks.::",8,alta_variabilidad
+Likelihood Of Attack,original,345,270,3,0.008696,1.57339,1.584963,0.992698,High,131,alta_variabilidad
+Indicators,original,56,559,50,0.892857,5.593069,5.643856,0.991001,::Differences in requests processed by the two agents. This requires careful monitoring or a capable log analysis tool.::,2,alta_variabilidad
+Skills Required,original,296,319,262,0.885135,7.889154,8.033423,0.982041,::SKILL:The adversary requires strong inter-personal and communication skills.:LEVEL:Low::,11,alta_variabilidad
+Prerequisites,original,490,125,435,0.887755,8.590197,8.764872,0.980071,::None::,11,alta_variabilidad
+description_length_chars,derived,615,0,423,0.687805,8.536137,8.724514,0.978408,156,7,alta_variabilidad
+Taxonomy Mappings,original,223,392,191,0.856502,7.410346,7.577429,0.97795,TAXONOMY NAME:ATTACK:ENTRY ID:1195.003:ENTRY NAME:Supply Chain Compromise: Compromise Hardware Supply Chain::,10,alta_variabilidad
+Alternate Terms,original,17,598,14,0.823529,3.690117,3.807355,0.969207,::TERM:XML Denial of Service (XML DoS):DESCRIPTION:::,3,alta_variabilidad
+Notes,original,19,596,16,0.842105,3.826875,4.0,0.956719,TYPE:Terminology:NOTE:HTTP Splitting – the act of forcing a sender of (HTTP) messages to emit data stream consisting of more messages than the sender’s intension. The messages sent are 100% valid and ,4,alta_variabilidad
+Related Attack Patterns,original,506,109,212,0.418972,7.235698,7.72792,0.936306,::NATURE:ChildOf:CAPEC ID:312::,16,alta_variabilidad
+Consequences,original,369,246,220,0.596206,7.16763,7.78136,0.921128,::SCOPE:Confidentiality:TECHNICAL IMPACT:Read Data::,25,alta_variabilidad
+Related Weaknesses,original,450,165,270,0.6,7.343527,8.076816,0.909211,::200::,51,alta_variabilidad
+Resources Required,original,272,343,200,0.735294,6.771561,7.643856,0.885883,::None: No specialized resources are required to execute this type of attack.::,54,alta_variabilidad
+Abstraction,original,615,0,3,0.004878,1.373168,1.584963,0.866373,Detailed,341,alta_variabilidad
+Typical Severity,original,490,125,5,0.010204,1.909092,2.321928,0.822201,High,211,alta_variabilidad
+consequences_scope_count,derived,615,0,12,0.019512,2.72394,3.584963,0.759824,0,246,alta_variabilidad
+consequences_impact_count,derived,615,0,9,0.014634,2.296983,3.169925,0.724618,0,247,alta_variabilidad
+mitigations_count,derived,615,0,13,0.021138,2.675317,3.70044,0.722973,0,215,alta_variabilidad
+indicators_count,derived,615,0,5,0.00813,0.575101,2.321928,0.247683,0,559,baja_variabilidad
+alternate_terms_count,derived,615,0,6,0.009756,0.234789,2.584963,0.090829,0,598,baja_variabilidad
+notes_length_chars,derived,615,0,16,0.026016,0.313834,4.0,0.078458,0,596,baja_variabilidad
+ID,original,615,0,615,1.0,9.264443,9.264443,1.0,1,1,identificador_o_texto_unico
+Name,original,615,0,615,1.0,9.264443,9.264443,1.0,Accessing Functionality Not Properly Constrained by ACLs,1,identificador_o_texto_unico
+skills_required_count,derived,615,0,5,0.00813,1.534295,2.321928,0.660785,0,319,variabilidad_media
+prerequisites_count,derived,615,0,7,0.011382,1.846369,2.807355,0.65769,1,330,variabilidad_media
+related_weaknesses_count,derived,615,0,16,0.026016,2.543965,4.0,0.635991,1,255,variabilidad_media
+example_instances_count,derived,615,0,6,0.009756,1.546027,2.584963,0.598085,0,346,variabilidad_media
+resources_required_count,derived,615,0,4,0.006504,1.139428,2.0,0.569714,0,343,variabilidad_media
+execution_flow_steps_count,derived,615,0,8,0.013008,1.702651,3.0,0.56755,0,376,variabilidad_media
+Status,original,615,0,5,0.00813,1.257906,2.321928,0.541751,Draft,402,variabilidad_media
+related_attack_patterns_count,derived,615,0,9,0.014634,1.624649,3.169925,0.51252,1,398,variabilidad_media
+execution_flow_techniques_count,derived,615,0,17,0.027642,2.058751,4.087463,0.503675,0,414,variabilidad_media
+taxonomy_mappings_count,derived,615,0,8,0.013008,1.470994,3.0,0.490331,0,392,variabilidad_media

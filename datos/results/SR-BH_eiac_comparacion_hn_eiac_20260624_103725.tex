@@ -1,0 +1,99 @@
+\begin{table}[h]
+\centering
+\caption{Comparación entre entropía normalizada y EIAC}
+\label{tab:comparacion-hn-eiac-20260624_103725}
+\scriptsize
+\begin{tabular}{|p{3cm}|c|c|c|c|c|c|p{5cm}|}
+\hline
+\textbf{Columna} & \textbf{\(H_n(X)\)} & \textbf{\(C(X)\)} & \textbf{\(U(X)\)} & \textbf{\(1-U(X)\)} & \textbf{EIAC} & \textbf{Diferencia} & \textbf{Lectura comparativa} \\
+\hline
+request\_body & 0.973 & 0.048 & 0.044 & 0.956 & 0.045 & 0.928 & EIAC reduce el valor porque la columna tiene muchos datos faltantes. \\
+\hline
+timestamp & 0.991 & 1.000 & 0.814 & 0.186 & 0.184 & 0.807 & EIAC ajusta fuertemente el valor de Shannon al considerar completitud y unicidad. \\
+\hline
+request\_referer & 0.677 & 0.333 & 0.010 & 0.990 & 0.223 & 0.454 & EIAC reduce el valor porque la columna tiene muchos datos faltantes. \\
+\hline
+request\_cookie & 0.803 & 0.499 & 0.087 & 0.913 & 0.366 & 0.437 & EIAC reduce el valor porque la columna tiene muchos datos faltantes. \\
+\hline
+request\_http\_request & 0.689 & 1.000 & 0.508 & 0.492 & 0.339 & 0.350 & EIAC realiza un ajuste moderado frente a Shannon normalizado. \\
+\hline
+src\_port & 0.968 & 1.000 & 0.330 & 0.670 & 0.649 & 0.319 & EIAC realiza un ajuste moderado frente a Shannon normalizado. \\
+\hline
+request\_content\_type & 0.254 & 0.049 & 0.003 & 0.997 & 0.013 & 0.242 & EIAC reduce el valor porque la columna tiene muchos datos faltantes. \\
+\hline
+ID & 0.429 & 0.443 & 0.001 & 0.999 & 0.190 & 0.239 & EIAC reduce el valor porque la columna tiene muchos datos faltantes. \\
+\hline
+Name & 0.429 & 0.443 & 0.001 & 0.999 & 0.190 & 0.239 & EIAC reduce el valor porque la columna tiene muchos datos faltantes. \\
+\hline
+Status & 0.372 & 0.443 & 0.000 & 1.000 & 0.165 & 0.207 & EIAC reduce el valor porque la columna tiene muchos datos faltantes. \\
+\hline
+Typical Severity & 0.367 & 0.443 & 0.001 & 0.999 & 0.162 & 0.204 & EIAC reduce el valor porque la columna tiene muchos datos faltantes. \\
+\hline
+request\_connection & 0.406 & 0.517 & 0.000 & 1.000 & 0.210 & 0.196 & EIAC realiza un ajuste moderado frente a Shannon normalizado. \\
+\hline
+Likelihood Of Attack & 0.295 & 0.368 & 0.001 & 1.000 & 0.109 & 0.187 & EIAC reduce el valor porque la columna tiene muchos datos faltantes. \\
+\hline
+Abstraction & 0.327 & 0.443 & 0.001 & 0.999 & 0.145 & 0.182 & EIAC reduce el valor porque la columna tiene muchos datos faltantes. \\
+\hline
+request\_origin & 0.150 & 0.002 & 0.000 & 1.000 & 0.000 & 0.149 & EIAC reduce el valor porque la columna tiene muchos datos faltantes. \\
+\hline
+request\_accept & 0.106 & 0.408 & 0.000 & 1.000 & 0.043 & 0.063 & EIAC reduce el valor porque la columna tiene muchos datos faltantes. \\
+\hline
+request\_accept\_language & 0.032 & 0.021 & 0.000 & 1.000 & 0.001 & 0.031 & EIAC reduce el valor porque la columna tiene muchos datos faltantes. \\
+\hline
+request\_user\_agent & 0.513 & 0.995 & 0.029 & 0.971 & 0.495 & 0.017 & Hn(X) y EIAC son cercanos; la columna conserva buena parte de su relevancia informativa. \\
+\hline
+response\_content\_length & 0.409 & 0.996 & 0.019 & 0.981 & 0.399 & 0.009 & Hn(X) y EIAC son cercanos; la columna conserva buena parte de su relevancia informativa. \\
+\hline
+request\_accept\_encoding & 0.007 & 0.387 & 0.000 & 1.000 & 0.003 & 0.005 & EIAC reduce el valor porque la columna tiene muchos datos faltantes. \\
+\hline
+response\_http\_status\_code & 0.357 & 1.000 & 0.000 & 1.000 & 0.357 & 0.000 & Hn(X) y EIAC son cercanos; la columna conserva buena parte de su relevancia informativa. \\
+\hline
+response\_http\_status\_message & 0.357 & 1.000 & 0.000 & 1.000 & 0.357 & 0.000 & Hn(X) y EIAC son cercanos; la columna conserva buena parte de su relevancia informativa. \\
+\hline
+000 - Normal & 0.991 & 1.000 & 0.000 & 1.000 & 0.991 & 0.000 & Hn(X) y EIAC son cercanos; la columna conserva buena parte de su relevancia informativa. \\
+\hline
+request\_http\_method & 0.102 & 1.000 & 0.000 & 1.000 & 0.102 & 0.000 & Hn(X) y EIAC son cercanos; la columna conserva buena parte de su relevancia informativa. \\
+\hline
+66 - SQL Injection & 0.842 & 1.000 & 0.000 & 1.000 & 0.842 & 0.000 & Hn(X) y EIAC son cercanos; la columna conserva buena parte de su relevancia informativa. \\
+\hline
+request\_host & 0.053 & 0.999 & 0.000 & 1.000 & 0.053 & 0.000 & Hn(X) y EIAC son cercanos; la columna conserva buena parte de su relevancia informativa. \\
+\hline
+194 - Fake the Source of Data & 0.341 & 1.000 & 0.000 & 1.000 & 0.341 & 0.000 & Hn(X) y EIAC son cercanos; la columna conserva buena parte de su relevancia informativa. \\
+\hline
+126 - Path Traversal & 0.221 & 1.000 & 0.000 & 1.000 & 0.221 & 0.000 & Hn(X) y EIAC son cercanos; la columna conserva buena parte de su relevancia informativa. \\
+\hline
+272 - Protocol Manipulation & 0.184 & 1.000 & 0.000 & 1.000 & 0.184 & 0.000 & Hn(X) y EIAC son cercanos; la columna conserva buena parte de su relevancia informativa. \\
+\hline
+34 - HTTP Response Splitting & 0.156 & 1.000 & 0.000 & 1.000 & 0.156 & 0.000 & Hn(X) y EIAC son cercanos; la columna conserva buena parte de su relevancia informativa. \\
+\hline
+242 - Code Injection & 0.136 & 1.000 & 0.000 & 1.000 & 0.136 & 0.000 & Hn(X) y EIAC son cercanos; la columna conserva buena parte de su relevancia informativa. \\
+\hline
+16 - Dictionary-based Password Attack & 0.128 & 1.000 & 0.000 & 1.000 & 0.128 & 0.000 & Hn(X) y EIAC son cercanos; la columna conserva buena parte de su relevancia informativa. \\
+\hline
+88 - OS Command Injection & 0.112 & 1.000 & 0.000 & 1.000 & 0.112 & 0.000 & Hn(X) y EIAC son cercanos; la columna conserva buena parte de su relevancia informativa. \\
+\hline
+310 - Scanning for Vulnerable Software & 0.082 & 1.000 & 0.000 & 1.000 & 0.082 & 0.000 & Hn(X) y EIAC son cercanos; la columna conserva buena parte de su relevancia informativa. \\
+\hline
+153 - Input Data Manipulation & 0.074 & 1.000 & 0.000 & 1.000 & 0.074 & 0.000 & Hn(X) y EIAC son cercanos; la columna conserva buena parte de su relevancia informativa. \\
+\hline
+274 - HTTP Verb Tampering & 0.053 & 1.000 & 0.000 & 1.000 & 0.053 & 0.000 & Hn(X) y EIAC son cercanos; la columna conserva buena parte de su relevancia informativa. \\
+\hline
+request\_http\_protocol & 0.014 & 1.000 & 0.000 & 1.000 & 0.014 & 0.000 & Hn(X) y EIAC son cercanos; la columna conserva buena parte de su relevancia informativa. \\
+\hline
+33 - HTTP Request Smuggling & 0.016 & 1.000 & 0.000 & 1.000 & 0.016 & 0.000 & Hn(X) y EIAC son cercanos; la columna conserva buena parte de su relevancia informativa. \\
+\hline
+response\_http\_protocol & 0.002 & 1.000 & 0.000 & 1.000 & 0.002 & 0.000 & Hn(X) y EIAC son cercanos; la columna conserva buena parte de su relevancia informativa. \\
+\hline
+248 - Command Injection & 0.000 & 1.000 & 0.000 & 1.000 & 0.000 & 0.000 & Hn(X) y EIAC son cercanos; la columna conserva buena parte de su relevancia informativa. \\
+\hline
+dst\_ip & 0.000 & 1.000 & 0.000 & 1.000 & 0.000 & 0.000 & Hn(X) y EIAC son cercanos; la columna conserva buena parte de su relevancia informativa. \\
+\hline
+dst\_port & 0.000 & 1.000 & 0.000 & 1.000 & 0.000 & 0.000 & Hn(X) y EIAC son cercanos; la columna conserva buena parte de su relevancia informativa. \\
+\hline
+request\_do\_not\_track & 0.000 & 0.005 & 0.000 & 1.000 & 0.000 & 0.000 & EIAC reduce el valor porque la columna tiene muchos datos faltantes. \\
+\hline
+src\_ip & 0.000 & 1.000 & 0.000 & 1.000 & 0.000 & 0.000 & Hn(X) y EIAC son cercanos; la columna conserva buena parte de su relevancia informativa. \\
+\hline
+\end{tabular}
+\end{table}

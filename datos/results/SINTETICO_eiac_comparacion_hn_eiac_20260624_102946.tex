@@ -1,0 +1,39 @@
+\begin{table}[h]
+\centering
+\caption{Comparación entre entropía normalizada y EIAC}
+\label{tab:comparacion-hn-eiac-20260624_102946}
+\scriptsize
+\begin{tabular}{|p{3cm}|c|c|c|c|c|c|p{5cm}|}
+\hline
+\textbf{Columna} & \textbf{\(H_n(X)\)} & \textbf{\(C(X)\)} & \textbf{\(U(X)\)} & \textbf{\(1-U(X)\)} & \textbf{EIAC} & \textbf{Diferencia} & \textbf{Lectura comparativa} \\
+\hline
+ID & 1.000 & 1.000 & 1.000 & 0.000 & 0.000 & 1.000 & Hn(X) es alto, pero EIAC baja el valor porque la columna se comporta como identificador o texto casi único. \\
+\hline
+Name & 1.000 & 1.000 & 1.000 & 0.000 & 0.000 & 1.000 & Hn(X) es alto, pero EIAC baja el valor porque la columna se comporta como identificador o texto casi único. \\
+\hline
+Uniform\_Random\_Text & 1.000 & 1.000 & 1.000 & 0.000 & 0.000 & 1.000 & Hn(X) es alto, pero EIAC baja el valor porque la columna se comporta como identificador o texto casi único. \\
+\hline
+High\_Cardinality\_Code & 0.998 & 1.000 & 0.982 & 0.018 & 0.018 & 0.980 & Hn(X) es alto, pero EIAC baja el valor porque la columna se comporta como identificador o texto casi único. \\
+\hline
+Sparse\_Field & 0.996 & 0.048 & 0.003 & 0.998 & 0.048 & 0.948 & EIAC reduce el valor porque la columna tiene muchos datos faltantes. \\
+\hline
+Typical Severity & 0.987 & 0.740 & 0.003 & 0.997 & 0.728 & 0.259 & EIAC realiza un ajuste moderado frente a Shannon normalizado. \\
+\hline
+Description & 0.993 & 1.000 & 0.067 & 0.933 & 0.927 & 0.066 & Hn(X) y EIAC son cercanos; la columna conserva buena parte de su relevancia informativa. \\
+\hline
+description\_length\_chars & 0.943 & 1.000 & 0.020 & 0.980 & 0.925 & 0.019 & Hn(X) y EIAC son cercanos; la columna conserva buena parte de su relevancia informativa. \\
+\hline
+Redundant\_Of\_Category & 0.996 & 1.000 & 0.003 & 0.997 & 0.992 & 0.003 & Hn(X) y EIAC son cercanos; la columna conserva buena parte de su relevancia informativa. \\
+\hline
+Abstraction & 0.995 & 1.000 & 0.003 & 0.997 & 0.992 & 0.003 & Hn(X) y EIAC son cercanos; la columna conserva buena parte de su relevancia informativa. \\
+\hline
+Binary\_Noisy & 1.000 & 1.000 & 0.002 & 0.998 & 0.998 & 0.002 & Hn(X) y EIAC son cercanos; la columna conserva buena parte de su relevancia informativa. \\
+\hline
+Likelihood Of Attack & 0.233 & 1.000 & 0.003 & 0.998 & 0.232 & 0.001 & Hn(X) y EIAC son cercanos; la columna conserva buena parte de su relevancia informativa. \\
+\hline
+Status & 0.138 & 1.000 & 0.003 & 0.998 & 0.138 & 0.000 & Hn(X) y EIAC son cercanos; la columna conserva buena parte de su relevancia informativa. \\
+\hline
+Mostly\_Missing & 0.000 & 0.006 & 0.001 & 0.999 & 0.000 & 0.000 & EIAC reduce el valor porque la columna tiene muchos datos faltantes. \\
+\hline
+\end{tabular}
+\end{table}

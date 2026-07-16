@@ -1,0 +1,83 @@
+\begin{table}[h]
+\centering
+\caption{Comparación entre entropía normalizada y EIAC}
+\label{tab:comparacion-hn-eiac-20260624_095401}
+\scriptsize
+\begin{tabular}{|p{3cm}|c|c|c|c|c|c|p{5cm}|}
+\hline
+\textbf{Columna} & \textbf{\(H_n(X)\)} & \textbf{\(C(X)\)} & \textbf{\(U(X)\)} & \textbf{\(1-U(X)\)} & \textbf{EIAC} & \textbf{Diferencia} & \textbf{Lectura comparativa} \\
+\hline
+ID & 1.000 & 1.000 & 1.000 & 0.000 & 0.000 & 1.000 & Hn(X) es alto, pero EIAC baja el valor porque la columna se comporta como identificador o texto casi único. \\
+\hline
+Name & 1.000 & 1.000 & 1.000 & 0.000 & 0.000 & 1.000 & Hn(X) es alto, pero EIAC baja el valor porque la columna se comporta como identificador o texto casi único. \\
+\hline
+Description & 0.997 & 0.997 & 0.967 & 0.033 & 0.032 & 0.964 & Hn(X) es alto, pero EIAC baja el valor porque la columna se comporta como identificador o texto casi único. \\
+\hline
+Alternate Terms & 0.969 & 0.028 & 0.023 & 0.977 & 0.026 & 0.943 & EIAC reduce el valor porque la columna tiene muchos datos faltantes. \\
+\hline
+Notes & 0.957 & 0.031 & 0.026 & 0.974 & 0.029 & 0.928 & EIAC reduce el valor porque la columna tiene muchos datos faltantes. \\
+\hline
+Indicators & 0.991 & 0.091 & 0.081 & 0.919 & 0.083 & 0.908 & EIAC reduce el valor porque la columna tiene muchos datos faltantes. \\
+\hline
+Execution Flow & 1.000 & 0.389 & 0.389 & 0.611 & 0.238 & 0.762 & EIAC reduce el valor porque la columna tiene muchos datos faltantes. \\
+\hline
+Prerequisites & 0.980 & 0.797 & 0.707 & 0.293 & 0.229 & 0.752 & EIAC ajusta fuertemente el valor de Shannon al considerar completitud y unicidad. \\
+\hline
+Example Instances & 0.999 & 0.437 & 0.433 & 0.567 & 0.248 & 0.751 & EIAC reduce el valor porque la columna tiene muchos datos faltantes. \\
+\hline
+Mitigations & 0.993 & 0.650 & 0.611 & 0.389 & 0.251 & 0.742 & EIAC ajusta fuertemente el valor de Shannon al considerar completitud y unicidad. \\
+\hline
+Taxonomy Mappings & 0.978 & 0.363 & 0.311 & 0.689 & 0.244 & 0.733 & EIAC reduce el valor porque la columna tiene muchos datos faltantes. \\
+\hline
+Skills Required & 0.982 & 0.481 & 0.426 & 0.574 & 0.271 & 0.711 & EIAC reduce el valor porque la columna tiene muchos datos faltantes. \\
+\hline
+description\_length\_chars & 0.978 & 1.000 & 0.688 & 0.312 & 0.305 & 0.673 & EIAC ajusta fuertemente el valor de Shannon al considerar completitud y unicidad. \\
+\hline
+Resources Required & 0.886 & 0.442 & 0.325 & 0.675 & 0.264 & 0.621 & EIAC reduce el valor porque la columna tiene muchos datos faltantes. \\
+\hline
+Consequences & 0.921 & 0.600 & 0.358 & 0.642 & 0.355 & 0.566 & EIAC ajusta fuertemente el valor de Shannon al considerar completitud y unicidad. \\
+\hline
+Related Weaknesses & 0.909 & 0.732 & 0.439 & 0.561 & 0.373 & 0.536 & EIAC ajusta fuertemente el valor de Shannon al considerar completitud y unicidad. \\
+\hline
+Likelihood Of Attack & 0.993 & 0.561 & 0.005 & 0.995 & 0.554 & 0.439 & EIAC ajusta fuertemente el valor de Shannon al considerar completitud y unicidad. \\
+\hline
+Related Attack Patterns & 0.936 & 0.823 & 0.345 & 0.655 & 0.505 & 0.432 & EIAC ajusta fuertemente el valor de Shannon al considerar completitud y unicidad. \\
+\hline
+Typical Severity & 0.822 & 0.797 & 0.008 & 0.992 & 0.650 & 0.172 & EIAC realiza un ajuste moderado frente a Shannon normalizado. \\
+\hline
+related\_weaknesses\_count & 0.636 & 1.000 & 0.026 & 0.974 & 0.619 & 0.017 & Hn(X) y EIAC son cercanos; la columna conserva buena parte de su relevancia informativa. \\
+\hline
+mitigations\_count & 0.723 & 1.000 & 0.021 & 0.979 & 0.708 & 0.015 & Hn(X) y EIAC son cercanos; la columna conserva buena parte de su relevancia informativa. \\
+\hline
+consequences\_scope\_count & 0.760 & 1.000 & 0.020 & 0.980 & 0.745 & 0.015 & Hn(X) y EIAC son cercanos; la columna conserva buena parte de su relevancia informativa. \\
+\hline
+execution\_flow\_techniques\_count & 0.504 & 1.000 & 0.028 & 0.972 & 0.490 & 0.014 & Hn(X) y EIAC son cercanos; la columna conserva buena parte de su relevancia informativa. \\
+\hline
+consequences\_impact\_count & 0.725 & 1.000 & 0.015 & 0.985 & 0.714 & 0.011 & Hn(X) y EIAC son cercanos; la columna conserva buena parte de su relevancia informativa. \\
+\hline
+related\_attack\_patterns\_count & 0.513 & 1.000 & 0.015 & 0.985 & 0.505 & 0.007 & Hn(X) y EIAC son cercanos; la columna conserva buena parte de su relevancia informativa. \\
+\hline
+prerequisites\_count & 0.658 & 1.000 & 0.011 & 0.989 & 0.650 & 0.007 & Hn(X) y EIAC son cercanos; la columna conserva buena parte de su relevancia informativa. \\
+\hline
+execution\_flow\_steps\_count & 0.568 & 1.000 & 0.013 & 0.987 & 0.560 & 0.007 & Hn(X) y EIAC son cercanos; la columna conserva buena parte de su relevancia informativa. \\
+\hline
+taxonomy\_mappings\_count & 0.490 & 1.000 & 0.013 & 0.987 & 0.484 & 0.006 & Hn(X) y EIAC son cercanos; la columna conserva buena parte de su relevancia informativa. \\
+\hline
+example\_instances\_count & 0.598 & 1.000 & 0.010 & 0.990 & 0.592 & 0.006 & Hn(X) y EIAC son cercanos; la columna conserva buena parte de su relevancia informativa. \\
+\hline
+skills\_required\_count & 0.661 & 1.000 & 0.008 & 0.992 & 0.655 & 0.005 & Hn(X) y EIAC son cercanos; la columna conserva buena parte de su relevancia informativa. \\
+\hline
+Status & 0.542 & 1.000 & 0.008 & 0.992 & 0.537 & 0.004 & Hn(X) y EIAC son cercanos; la columna conserva buena parte de su relevancia informativa. \\
+\hline
+Abstraction & 0.866 & 1.000 & 0.005 & 0.995 & 0.862 & 0.004 & Hn(X) y EIAC son cercanos; la columna conserva buena parte de su relevancia informativa. \\
+\hline
+resources\_required\_count & 0.570 & 1.000 & 0.007 & 0.993 & 0.566 & 0.004 & Hn(X) y EIAC son cercanos; la columna conserva buena parte de su relevancia informativa. \\
+\hline
+notes\_length\_chars & 0.078 & 1.000 & 0.026 & 0.974 & 0.076 & 0.002 & Hn(X) y EIAC son cercanos; la columna conserva buena parte de su relevancia informativa. \\
+\hline
+indicators\_count & 0.248 & 1.000 & 0.008 & 0.992 & 0.246 & 0.002 & Hn(X) y EIAC son cercanos; la columna conserva buena parte de su relevancia informativa. \\
+\hline
+alternate\_terms\_count & 0.091 & 1.000 & 0.010 & 0.990 & 0.090 & 0.001 & Hn(X) y EIAC son cercanos; la columna conserva buena parte de su relevancia informativa. \\
+\hline
+\end{tabular}
+\end{table}

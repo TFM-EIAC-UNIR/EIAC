@@ -1,0 +1,99 @@
+\begin{table}[h]
+\centering
+\caption{Cálculo de EIAC y clasificación funcional de columnas}
+\label{tab:calculo-eiac-columnas-20260624_103725}
+\scriptsize
+\begin{tabular}{|p{2.1cm}|p{3.0cm}|c|c|c|c|c|c|p{2.5cm}|p{2.8cm}|}
+\hline
+\textbf{Columna} & \textbf{Distribución} & \textbf{\(k\)} & \textbf{\(H(X)\)} & \textbf{\(H_n(X)\)} & \textbf{\(C(X)\)} & \textbf{\(U(X)\)} & \textbf{EIAC} & \textbf{Análisis} & \textbf{Clasificación funcional} \\
+\hline
+000 - Normal & 1 = 22264; 0 = 17736 & 2 & 0.991 & 0.991 & 1.000 & 0.000 & 0.991 & Alta relevancia & Analítica complementaria \\
+\hline
+66 - SQL Injection & 0 = 29196; 1 = 10804 & 2 & 0.842 & 0.842 & 1.000 & 0.000 & 0.842 & Alta relevancia & Analítica complementaria \\
+\hline
+src\_port & 49692 = 55; 57897 = 51; 49691 = 50; 49690 = 47; ... + 13192 valores & 13196 & 13.251 & 0.968 & 1.000 & 0.330 & 0.649 & Relevancia media & Analítica complementaria \\
+\hline
+request\_user\_agent & Mozilla/5.0 (X11; Linux x86\_64; rv:70.0) Gecko/20100101 Firefox/70.0 = 22513; Mozilla/5.0 (X11; Linux x86\_64; rv:73.0) Gecko/20100101 Firefox/73.0 = 838; Mozilla/5.0 (compatible; Nmap Scripting Engine; https://nmap.org/book/nse.html) = 403; Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.2; Win64; x64; Trident/6.0; .NET4.0E; .NET4.0C; .NET CLR 3.5.30729; .NET CLR 3.0.30729; .NET CLR 2.0.50727) = 27; ... + 1161 valores & 1165 & 5.224 & 0.513 & 0.995 & 0.029 & 0.495 & Relevancia media & Analítica complementaria \\
+\hline
+response\_content\_length & 276 = 13798; 25174 = 8668; 53918 = 3997; 25173 = 3242; ... + 766 valores & 770 & 3.918 & 0.409 & 0.996 & 0.019 & 0.399 & Relevancia media & Analítica complementaria \\
+\hline
+request\_cookie & wordpress\_test\_cookie=WP+Cookie+check = 2060; wordpress\_test\_cookie=WP+Cookie+check; wordpress\_logged\_in\_1aefbe2f76edd740f8e362f39da3353b=rafael\%7C1595192794\%7Cac2rIDjGxLVFiHg6gbhjlqskQeNCp4jlT2Ie0y0aAac\%7C46ce7c738987c7405e97a93bf8801872fc61acea0d217d2ba547814ea71cc3d4 = 987; wordpress\_logged\_in\_1aefbe2f76edd740f8e362f39da3353b=rafael\%7C1595323524\%7C6tC0Bz0qiJuGChXpFpxWSj0f3S8yenNYTdZsIhm2LRR\%7Cbabde797833e7bb3ef2675427c083c091406c9fd8627fefa2d894bad550a3656; wordpress\_test\_cookie=WP+Cookie+check = 950; wordpress\_test\_cookie=WP+Cookie+check; wordpress\_logged\_in\_1aefbe2f76edd740f8e362f39da3353b=rafael\%7C1595188528\%7ClHi7YVFypQtuJVAqG6B4FOpzZ24r5fr11PP0w4JBwKX\%7C05eff642e7638456de705bca89de40119bc343cb09e3b0c57372fe30717543b0 = 689; ... + 3489 valores & 3493 & 9.449 & 0.803 & 0.499 & 0.087 & 0.366 & Relevancia media & Bajo aporte por datos faltantes \\
+\hline
+response\_http\_status\_code & 200 = 19387; 404 = 18895; 301 = 1179; 400 = 230; ... + 8 valores & 12 & 1.281 & 0.357 & 1.000 & 0.000 & 0.357 & Relevancia media & Analítica complementaria \\
+\hline
+response\_http\_status\_message & OK = 19387; Not Found = 18895; Moved Permanently = 1179; Bad Request = 230; ... + 8 valores & 12 & 1.281 & 0.357 & 1.000 & 0.000 & 0.357 & Relevancia media & Analítica complementaria \\
+\hline
+194 - Fake the Source of Data & 0 = 37465; 1 = 2535 & 2 & 0.341 & 0.341 & 1.000 & 0.000 & 0.341 & Relevancia media & Analítica complementaria \\
+\hline
+request\_http\_request & / = 12845; /blog/wp-login.php = 746; /blog/index.php/comments/feed/ = 582; /blog/index.php/my-account/ = 207; ... + 20322 valores & 20326 & 9.866 & 0.689 & 1.000 & 0.508 & 0.339 & Relevancia media & Analítica complementaria \\
+\hline
+request\_referer & http://test-site.com/ = 2204; http://test-site.com/blog/index.php/page/2/ = 1059; http://test-site.com/blog/index.php/my-account/edit-profile/ = 832; http://test-site.com/blog/index.php/my-account/ = 661; ... + 399 valores & 403 & 5.859 & 0.677 & 0.333 & 0.010 & 0.223 & Baja relevancia & Bajo aporte por datos faltantes \\
+\hline
+126 - Path Traversal & 0 = 38581; 1 = 1419 & 2 & 0.221 & 0.221 & 1.000 & 0.000 & 0.221 & Baja relevancia & Bajo aporte por baja variabilidad \\
+\hline
+request\_connection & keep-alive = 16261; Close = 4213; close = 197; Keep-Alive = 13 & 4 & 0.811 & 0.406 & 0.517 & 0.000 & 0.210 & Baja relevancia & Analítica complementaria \\
+\hline
+ID & 66 = 10517; 194 = 2373; 34 = 811; 126 = 746; ... + 55 valores & 59 & 2.527 & 0.429 & 0.443 & 0.001 & 0.190 & Baja relevancia & Trazabilidad \\
+\hline
+Name & SQL Injection = 10517; Fake the Source of Data = 2373; HTTP Response Splitting = 811; Path Traversal = 746; ... + 55 valores & 59 & 2.527 & 0.429 & 0.443 & 0.001 & 0.190 & Baja relevancia & Trazabilidad \\
+\hline
+272 - Protocol Manipulation & 0 = 38880; 1 = 1120 & 2 & 0.184 & 0.184 & 1.000 & 0.000 & 0.184 & Baja relevancia & Bajo aporte por baja variabilidad \\
+\hline
+timestamp & 19/Jul/2020:10:45:37 +0200 = 27; 19/Jul/2020:10:45:40 +0200 = 26; 19/Jul/2020:10:45:38 +0200 = 25; 19/Jul/2020:10:46:01 +0200 = 23; ... + 32565 valores & 32569 & 14.855 & 0.991 & 1.000 & 0.814 & 0.184 & Baja relevancia & Candidata a limpieza o revisión \\
+\hline
+Status & Draft = 12059; Stable = 3769; Draft; Draft = 1288; Draft; Stable = 256; ... + 9 valores & 13 & 1.378 & 0.372 & 0.443 & 0.000 & 0.165 & Baja relevancia & Analítica \\
+\hline
+Typical Severity & High = 12078; Medium = 2902; Very High = 746; High; Medium = 314; ... + 24 valores & 28 & 1.762 & 0.367 & 0.443 & 0.001 & 0.162 & Baja relevancia & Analítica \\
+\hline
+34 - HTTP Response Splitting & 0 = 39096; 1 = 904 & 2 & 0.156 & 0.156 & 1.000 & 0.000 & 0.156 & Baja relevancia & Bajo aporte por baja variabilidad \\
+\hline
+Abstraction & Standard = 13766; Detailed = 1120; Meta = 942; Meta; Standard = 484; ... + 18 valores & 22 & 1.457 & 0.327 & 0.443 & 0.001 & 0.145 & Baja relevancia & Analítica \\
+\hline
+242 - Code Injection & 0 = 39241; 1 = 759 & 2 & 0.136 & 0.136 & 1.000 & 0.000 & 0.136 & Baja relevancia & Bajo aporte por baja variabilidad \\
+\hline
+16 - Dictionary-based Password Attack & 0 = 39291; 1 = 709 & 2 & 0.128 & 0.128 & 1.000 & 0.000 & 0.128 & Baja relevancia & Bajo aporte por baja variabilidad \\
+\hline
+88 - OS Command Injection & 0 = 39402; 1 = 598 & 2 & 0.112 & 0.112 & 1.000 & 0.000 & 0.112 & Baja relevancia & Bajo aporte por baja variabilidad \\
+\hline
+Likelihood Of Attack & High = 11978; Medium = 846; ; High = 441; ; = 312; ... + 16 valores & 20 & 1.276 & 0.295 & 0.368 & 0.001 & 0.109 & Baja relevancia & Analítica \\
+\hline
+request\_http\_method & GET = 37560; POST = 1968; TRACE = 98; OPTIONS = 67; ... + 13 valores & 17 & 0.416 & 0.102 & 1.000 & 0.000 & 0.102 & Baja relevancia & Bajo aporte por baja variabilidad \\
+\hline
+310 - Scanning for Vulnerable Software & 0 = 39593; 1 = 407 & 2 & 0.082 & 0.082 & 1.000 & 0.000 & 0.082 & Baja relevancia & Bajo aporte por baja variabilidad \\
+\hline
+153 - Input Data Manipulation & 0 = 39642; 1 = 358 & 2 & 0.074 & 0.074 & 1.000 & 0.000 & 0.074 & Baja relevancia & Bajo aporte por baja variabilidad \\
+\hline
+274 - HTTP Verb Tampering & 0 = 39758; 1 = 242 & 2 & 0.053 & 0.053 & 1.000 & 0.000 & 0.053 & Baja relevancia & Bajo aporte por baja variabilidad \\
+\hline
+request\_host & test-site.com = 39346; 172.26.0.1 = 374; 249.network5-175-62-15.static.network5.net = 230; www.google.com:80 = 12; ... + 2 valores & 6 & 0.137 & 0.053 & 0.999 & 0.000 & 0.053 & Baja relevancia & Bajo aporte por baja variabilidad \\
+\hline
+request\_body & username=rafael\&password=espa\%C3\%B1a01\&user-registration-login-nonce=6eac0e2d5f\&\_wp\_http\_referer=\%2Fblog\%2Findex.php\%2Fmy-account\%2F\&login=Login\&redirect= = 46; comment=\&submit=Post+Comment\&comment\_post\_ID=56\&comment\_parent=0 = 46; profile-pic-url=\&profile-default-image=http\%3A\%2F\%2F1.gravatar.com\%2Favatar\%2F14d5b5665405f8accb4e5f2fa274cd44\%3Fs\%3D96\%26d\%3Dmm\%26r\%3Dg\&profile-pic=test\_file.txt\&user\_registration\_first\_name=rafael\&user\_registration\_user\_login=rafael\&user\_registration\_last\_name=gracia\&user\_registration\_user\_email=rafael\%40gmail.com\&\_wpnonce=5c88b58e23\&\_wp\_http\_referer=\%2Fblog\%2Findex.php\%2Fmy-account\%2Fedit-profile\%2F\&save\_account\_details=Save+changes\&action=save\_profile\_details = 28; <?php exec('echo jrpkjls7ygpnhzkjcebd',\$colm);echo join(" = 25; ... + 1763 valores & 1767 & 10.497 & 0.973 & 0.048 & 0.044 & 0.045 & Baja relevancia & Bajo aporte por datos faltantes \\
+\hline
+request\_accept & */* = 15476; image/webp,*/* = 336; text/css,*/*;q=0.1 = 296; text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8 = 202; ... + 8 valores & 12 & 0.380 & 0.106 & 0.408 & 0.000 & 0.043 & Baja relevancia & Bajo aporte por datos faltantes \\
+\hline
+33 - HTTP Request Smuggling & 0 = 39940; 1 = 60 & 2 & 0.016 & 0.016 & 1.000 & 0.000 & 0.016 & Baja relevancia & Bajo aporte por baja variabilidad \\
+\hline
+request\_http\_protocol & HTTP/1.1 = 39951; HTTP/1.0 = 49 & 2 & 0.014 & 0.014 & 1.000 & 0.000 & 0.014 & Baja relevancia & Bajo aporte por baja variabilidad \\
+\hline
+request\_content\_type & application/x-www-form-urlencoded = 1624; ../../../../../../../../../../../../../../../../etc/passwd = 17; /../../../../../../../../../../../../../../../../etc/passwd = 17; ../../../../../../../../../../../../../../../../ = 17; ... + 135 valores & 139 & 1.810 & 0.254 & 0.049 & 0.003 & 0.013 & Baja relevancia & Bajo aporte por datos faltantes \\
+\hline
+request\_accept\_encoding & gzip, deflate = 15471; gzip = 13; deflate, gzip = 2 & 3 & 0.012 & 0.007 & 0.387 & 0.000 & 0.003 & Baja relevancia & Bajo aporte por datos faltantes \\
+\hline
+response\_http\_protocol & HTTP/1.1 = 39994; HTTP/1.0 = 6 & 2 & 0.002 & 0.002 & 1.000 & 0.000 & 0.002 & Baja relevancia & Bajo aporte por baja variabilidad \\
+\hline
+request\_accept\_language & en-US,en;q=0.5 = 843; ca,es;q=0.9 = 3; es-ES = 1; HTTP://www.google.com/ = 1; ... + 1 valores & 5 & 0.073 & 0.032 & 0.021 & 0.000 & 0.001 & Baja relevancia & Bajo aporte por datos faltantes \\
+\hline
+248 - Command Injection & 0 = 39999; 1 = 1 & 2 & 0.000 & 0.000 & 1.000 & 0.000 & 0.000 & Baja relevancia & Bajo aporte por baja variabilidad \\
+\hline
+request\_origin & https://test-site.com = 74; \textbackslash{}..\textbackslash{}..\textbackslash{}..\textbackslash{}..\textbackslash{}..\textbackslash{}..\textbackslash{}..\textbackslash{}..\textbackslash{}..\textbackslash{}..\textbackslash{}..\textbackslash{}..\textbackslash{}..\textbackslash{}..\textbackslash{}..\textbackslash{}..\textbackslash{} = 1; https://test-site.com' OR '1'='1' -- = 1; https://test-site.com" where 0 in (select sleep(15) ) -- = 1 & 4 & 0.299 & 0.150 & 0.002 & 0.000 & 0.000 & Baja relevancia & Bajo aporte por datos faltantes \\
+\hline
+dst\_ip & 172.26.0.4 = 40000 & 1 & 0.000 & 0.000 & 1.000 & 0.000 & 0.000 & Baja relevancia & Bajo aporte por baja variabilidad \\
+\hline
+dst\_port & 80 = 40000 & 1 & 0.000 & 0.000 & 1.000 & 0.000 & 0.000 & Baja relevancia & Bajo aporte por baja variabilidad \\
+\hline
+request\_do\_not\_track & 1 = 188 & 1 & 0.000 & 0.000 & 0.005 & 0.000 & 0.000 & Baja relevancia & Bajo aporte por datos faltantes \\
+\hline
+src\_ip & 172.26.0.1 = 40000 & 1 & 0.000 & 0.000 & 1.000 & 0.000 & 0.000 & Baja relevancia & Bajo aporte por baja variabilidad \\
+\hline
+\end{tabular}
+\end{table}

@@ -1,0 +1,15 @@
+column,column_type,rows,missing_or_empty_values,unique_values,unique_ratio,entropy_shannon_bits,max_entropy_bits,normalized_entropy,most_common_value,most_common_frequency,classification
+Binary_Noisy,original,1200,0,2,0.001667,0.999968,1.0,0.999968,FALSE,604,alta_variabilidad
+Sparse_Field,original,58,1142,3,0.051724,1.578243,1.584963,0.995761,Evento raro C,22,alta_variabilidad
+Redundant_Of_Category,original,1200,0,4,0.003333,1.991494,2.0,0.995747,Gamma,339,alta_variabilidad
+Abstraction,original,1200,0,4,0.003333,1.990267,2.0,0.995134,Gamma,345,alta_variabilidad
+Description,original,1200,0,80,0.066667,6.277561,6.321928,0.992982,Este registro de prueba describe un mecanismo de autenticación simulado generado aleatoriamente para pruebas de entropía.,24,alta_variabilidad
+Typical Severity,original,888,312,4,0.004505,1.974744,2.0,0.987372,Medium,277,alta_variabilidad
+description_length_chars,derived,1200,0,24,0.02,4.32558,4.584963,0.943427,116,125,alta_variabilidad
+Likelihood Of Attack,original,1200,0,3,0.0025,0.369259,1.584963,0.232977,Dominant,1126,baja_variabilidad
+Status,original,1200,0,3,0.0025,0.219345,1.584963,0.138391,Standard,1165,baja_variabilidad
+Mostly_Missing,original,7,1193,1,0.142857,0.0,0.0,0.0,Valor excepcional,7,baja_variabilidad
+ID,original,1200,0,1200,1.0,10.228819,10.228819,1.0,49,1,identificador_o_texto_unico
+Name,original,1200,0,1200,1.0,10.228819,10.228819,1.0,Fake Overflow B8,1,identificador_o_texto_unico
+Uniform_Random_Text,original,1200,0,1200,1.0,10.228819,10.228819,1.0,oktkznpaet,1,identificador_o_texto_unico
+High_Cardinality_Code,original,1200,0,1178,0.981667,10.186523,10.202124,0.998471,UIFU63JN,4,identificador_o_texto_unico

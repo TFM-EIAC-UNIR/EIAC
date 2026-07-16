@@ -1,0 +1,45 @@
+column,column_type,rows,missing_or_empty_values,unique_values,unique_ratio,entropy_shannon_bits,max_entropy_bits,normalized_entropy,most_common_value,most_common_frequency,classification
+timestamp,original,40000,0,32569,0.814225,14.855483,14.991212,0.990946,19/Jul/2020:10:45:37 +0200,27,alta_variabilidad
+000 - Normal,original,40000,0,2,5e-05,0.990737,1.0,0.990737,1,22264,alta_variabilidad
+request_body,original,1917,38083,1767,0.921753,10.496507,10.787086,0.973062,username=rafael&password=espa%C3%B1a01&user-registration-login-nonce=6eac0e2d5f&_wp_http_referer=%2Fblog%2Findex.php%2Fmy-account%2F&login=Login&redirect=,46,alta_variabilidad
+src_port,original,40000,0,13196,0.3299,13.251142,13.687813,0.968098,49692,55,alta_variabilidad
+66 - SQL Injection,original,40000,0,2,5e-05,0.841608,1.0,0.841608,0,29196,alta_variabilidad
+request_cookie,original,19961,20039,3493,0.174991,9.448689,11.770251,0.80276,wordpress_test_cookie=WP+Cookie+check,2060,alta_variabilidad
+Likelihood Of Attack,original,14732,25268,20,0.001358,1.275678,4.321928,0.295164,High,11978,baja_variabilidad
+request_content_type,original,1978,38022,139,0.070273,1.809618,7.118941,0.254198,application/x-www-form-urlencoded,1624,baja_variabilidad
+126 - Path Traversal,original,40000,0,2,5e-05,0.221146,1.0,0.221146,0,38581,baja_variabilidad
+272 - Protocol Manipulation,original,40000,0,2,5e-05,0.184261,1.0,0.184261,0,38880,baja_variabilidad
+34 - HTTP Response Splitting,original,40000,0,2,5e-05,0.1558,1.0,0.1558,0,39096,baja_variabilidad
+request_origin,original,77,39923,4,0.051948,0.29926,2.0,0.14963,https://test-site.com,74,baja_variabilidad
+242 - Code Injection,original,40000,0,2,5e-05,0.135646,1.0,0.135646,0,39241,baja_variabilidad
+16 - Dictionary-based Password Attack,original,40000,0,2,5e-05,0.128469,1.0,0.128469,0,39291,baja_variabilidad
+88 - OS Command Injection,original,40000,0,2,5e-05,0.112059,1.0,0.112059,0,39402,baja_variabilidad
+request_accept,original,16320,23680,12,0.000735,0.379614,3.584963,0.105891,*/*,15476,baja_variabilidad
+request_http_method,original,40000,0,17,0.000425,0.416005,4.087463,0.101776,GET,37560,baja_variabilidad
+310 - Scanning for Vulnerable Software,original,40000,0,2,5e-05,0.081951,1.0,0.081951,0,39593,baja_variabilidad
+153 - Input Data Manipulation,original,40000,0,2,5e-05,0.073749,1.0,0.073749,0,39642,baja_variabilidad
+274 - HTTP Verb Tampering,original,40000,0,2,5e-05,0.053283,1.0,0.053283,0,39758,baja_variabilidad
+request_host,original,39977,23,6,0.00015,0.136606,2.584963,0.052846,test-site.com,39346,baja_variabilidad
+request_accept_language,original,849,39151,5,0.005889,0.07332,2.321928,0.031577,"en-US,en;q=0.5",843,baja_variabilidad
+33 - HTTP Request Smuggling,original,40000,0,2,5e-05,0.016234,1.0,0.016234,0,39940,baja_variabilidad
+request_http_protocol,original,40000,0,2,5e-05,0.013616,1.0,0.013616,HTTP/1.1,39951,baja_variabilidad
+request_accept_encoding,original,15486,24514,3,0.000194,0.011643,1.584963,0.007346,"gzip, deflate",15471,baja_variabilidad
+response_http_protocol,original,40000,0,2,5e-05,0.002122,1.0,0.002122,HTTP/1.1,39994,baja_variabilidad
+248 - Command Injection,original,40000,0,2,5e-05,0.000418,1.0,0.000418,0,39999,baja_variabilidad
+src_ip,original,40000,0,1,2.5e-05,0.0,0.0,0.0,172.26.0.1,40000,baja_variabilidad
+dst_ip,original,40000,0,1,2.5e-05,0.0,0.0,0.0,172.26.0.4,40000,baja_variabilidad
+dst_port,original,40000,0,1,2.5e-05,0.0,0.0,0.0,80,40000,baja_variabilidad
+request_do_not_track,original,188,39812,1,0.005319,0.0,0.0,0.0,1,188,baja_variabilidad
+ID,original,17736,22264,59,0.003327,2.52659,5.882643,0.429499,66,10517,identificador_o_texto_unico
+request_http_request,original,40000,0,20326,0.50815,9.865777,14.311039,0.689382,/,12845,variabilidad_media
+request_referer,original,13317,26683,403,0.030262,5.858643,8.654636,0.676937,http://test-site.com/,2204,variabilidad_media
+request_user_agent,original,39802,198,1165,0.02927,5.22385,10.186114,0.51284,Mozilla/5.0 (X11; Linux x86_64; rv:70.0) Gecko/20100101 Firefox/70.0,22513,variabilidad_media
+Name,original,17736,22264,59,0.003327,2.52659,5.882643,0.429499,SQL Injection,10517,variabilidad_media
+response_content_length,original,39847,153,770,0.019324,3.918136,9.588715,0.40862,276,13798,variabilidad_media
+request_connection,original,20684,19316,4,0.000193,0.811085,2.0,0.405542,keep-alive,16261,variabilidad_media
+Status,original,17736,22264,13,0.000733,1.37756,3.70044,0.372269,Draft,12059,variabilidad_media
+Typical Severity,original,17736,22264,28,0.001579,1.762213,4.807355,0.366566,High,12078,variabilidad_media
+response_http_status_code,original,40000,0,12,0.0003,1.28096,3.584963,0.357315,200,19387,variabilidad_media
+response_http_status_message,original,40000,0,12,0.0003,1.28096,3.584963,0.357315,OK,19387,variabilidad_media
+194 - Fake the Source of Data,original,40000,0,2,5e-05,0.340699,1.0,0.340699,0,37465,variabilidad_media
+Abstraction,original,17736,22264,22,0.00124,1.456944,4.459432,0.326711,Standard,13766,variabilidad_media
