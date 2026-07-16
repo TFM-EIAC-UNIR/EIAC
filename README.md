@@ -81,6 +81,8 @@ EIAC/
 | Dataset sintético   | [datasets/sintetico/dataset_sintetico_grande.csv](datasets/sintetico/dataset_sintetico_grande.csv) |
 | Dataset SR-BH       | [datasets/SR-BH/dataset_real - dataset_real_40k.csv](datasets/SR-BH/dataset_real%20-%20dataset_real_40k.csv) |
 | Catálogo CAPEC v3.9 | [capecnuevo.xml](capecnuevo.xml) |
+| Procedencia de los datos | [DATASETS.md](DATASETS.md) |
+| Contribuciones de los autores | [CONTRIBUTIONS.md](CONTRIBUTIONS.md) |
 
 
 ---
@@ -185,6 +187,20 @@ python3 scripts/procesar_capec_entropia.py --input "datasets/SR-BH/dataset_real 
 
 
 Cada ejecución añade un timestamp (`YYYYMMDD_HHMMSS`) a los archivos de salida.
+
+## Datos y reproducibilidad
+
+Los experimentos utilizan versiones fijas de los tres datasets. Su procedencia,
+dimensiones y huellas SHA-256 están registradas en [DATASETS.md](DATASETS.md).
+En el escenario SR-BH se empleó una muestra aleatoria de 40.000 registros del
+conjunto original por razones de viabilidad computacional. La muestra exacta
+utilizada se incluye en el repositorio.
+
+## Contribuciones de los autores
+
+El planteamiento, la formulación de EIAC, la experimentación y la revisión del
+trabajo se realizaron conjuntamente. Las responsabilidades principales de cada
+integrante se describen en [CONTRIBUTIONS.md](CONTRIBUTIONS.md).
 
 ---
 
