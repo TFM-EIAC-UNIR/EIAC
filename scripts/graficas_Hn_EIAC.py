@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 from matplotlib import rcParams
 from matplotlib.lines import Line2D
 import pandas as pd
+from pathlib import Path
 
 rcParams["font.family"] = "serif"
 rcParams["mathtext.fontset"] = "dejavuserif"
@@ -21,19 +22,25 @@ C_GRID = "#e9ecef"
 # ------------------------------------------------------------
 # DATOS  (nombre, Hn, EIAC)
 # ------------------------------------------------------------
-# Escenario 1: CAPEC (615 registros)
-url_esc1 = "https://docs.google.com/spreadsheets/d/e/2PACX-1vS4_2arw77tW16ChDX_jqpA3LrqtK_g-rdyW8_nM82yWr83HZsJyuHqVnbXM_LmzNkHPjnne8nsbj70/pub?gid=668138267&single=true&output=csv"
-df_esc1 = pd.read_csv(url_esc1)
+REPO_ROOT = Path(__file__).resolve().parents[1]
+RESULTS_DIR = REPO_ROOT / "datos" / "results"
+
+# Resultados congelados de los tres escenarios utilizados en la memoria.
+df_esc1 = pd.read_csv(
+    RESULTS_DIR / "CAPEC_eiac_columnas_20260624_095401.csv"
+)
 df_esc1 = df_esc1.rename(columns={'Hn(X)': 'Hn_val', 'EIAC': 'EIAC_val'})
 esc1 = list(df_esc1[['Columna', 'Hn_val', 'EIAC_val']].itertuples(index=False, name=None))
 
-url_esc2 = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQq3xyff0g4D__UaZIiuohFSXZVChd8D0rhfzmnI9kIWGc5RrsoTGSXLJChpevgsEXFEx9LIGhxCbgI/pub?gid=206387260&single=true&output=csv"
-df_esc2 = pd.read_csv(url_esc2)
+df_esc2 = pd.read_csv(
+    RESULTS_DIR / "SINTETICO_eiac_columnas_20260624_102946.csv"
+)
 df_esc2 = df_esc2.rename(columns={'Hn(X)': 'Hn_val', 'EIAC': 'EIAC_val'})
 esc2 = list(df_esc2[['Columna', 'Hn_val', 'EIAC_val']].itertuples(index=False, name=None))
 
-url_esc3 = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSdodLca7vizGH77Bcy9rw28DQ-0v2ee3BmBtonTFQCmNFt5vAC8ILHf2IZmk3CB549uB7yYtf9SCWT/pub?output=csv"
-df_esc3 = pd.read_csv(url_esc3)
+df_esc3 = pd.read_csv(
+    RESULTS_DIR / "SR-BH_eiac_columnas_20260624_103725.csv"
+)
 df_esc3 = df_esc3.rename(columns={'Hn(X)': 'Hn_val', 'EIAC': 'EIAC_val'})
 esc3 = list(df_esc3[['Columna', 'Hn_val', 'EIAC_val']].itertuples(index=False, name=None))
 

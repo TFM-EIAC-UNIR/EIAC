@@ -1,0 +1,4 @@
+pandas==2.3.3
+reportlab==5.0.0
+matplotlib==3.9.4
+

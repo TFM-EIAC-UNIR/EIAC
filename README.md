@@ -7,7 +7,7 @@
 
 ## ¿Qué es este TFM?
 
-Un **Trabajo Fin de Máster (TFM)** es el proyecto de investigación aplicado que culmina el Máster en Análisis y Visualización de Big Data. En este caso, el objetivo es evaluar qué columnas de un dataset aportan información útil para el análisis de patrones de ataque cibernético descritos en [CAPEC](https://capec.mitre.org/) (*Common Attack Pattern Enumeration and Classification*, MITRE), usando una propuesta para evaluar **entropía de columnas** y la métrica denominada **EIAC** (*Entropía Informativa Ajustada por Columna*).
+Este repositorio forma parte del Trabajo Fin de Máster del Máster en Visual Analytics & Big Data. El objetivo es caracterizar la relevancia informativa intrínseca de las columnas de datasets de ciberseguridad basados en [CAPEC](https://capec.mitre.org/) (*Common Attack Pattern Enumeration and Classification*, MITRE), mediante entropía de Shannon y el **Índice de Entropía Informativa Ajustada de Columna (EIAC)**.
 
 Este repositorio contiene el código experimental, los datasets de prueba y los resultados generados para sustentar dicho trabajo.
 
@@ -35,7 +35,7 @@ Repositorio del TFM para **calcular y comparar la relevancia informativa de las 
 
 La **entropía de Shannon normalizada** $H_n(X)$ mide la dispersión de valores en una columna, pero puede **sobrevalorar** atributos que son casi únicos (como un identificador) o que tienen muchos datos vacíos.
 
-**EIAC** corrige ese sesgo combinando tres factores:
+**EIAC** ajusta esa interpretación combinando tres factores:
 
 $$
 \text{EIAC}(X) = H_n(X) \times C(X) \times \bigl(1 - U(X)\bigr)
@@ -50,17 +50,17 @@ $$
 | 1 - U(X)   | Penalización por columnas que se comportan como identificadores          |
 
 
-Con EIAC se obtiene un **ranking de columnas** con clasificación de relevancia (alta, media, baja) y una etiqueta funcional (analítica, trazabilidad, descriptiva, etc.), útil para decidir qué atributos conservar o depurar en un dataset de ciberseguridad.
+Con EIAC se obtiene un **ranking de columnas** con clasificación de relevancia informativa intrínseca (alta, media o baja) y una etiqueta funcional (analítica, trazabilidad o descriptiva, entre otras). El resultado sirve como apoyo al análisis exploratorio, pero no representa por sí solo capacidad predictiva ni redundancia entre variables.
 
 ---
 
 ## Estructura del proyecto
 
 ```
-capec-v3.9/
+EIAC/
 ├── scripts/
 │   ├── procesar_capec_entropia.py    # Cálculo de entropía y EIAC
-│   └── graficas_Hn_EAIC.py           # Gráficas comparativas Hn(X) vs EIAC
+│   └── graficas_Hn_EIAC.py           # Gráficas comparativas Hn(X) vs EIAC
 ├── datasets/
 │   ├── CAPEC/                        # Dataset del catálogo CAPEC
 │   ├── sintetico/                    # Dataset sintético de prueba
@@ -76,7 +76,7 @@ capec-v3.9/
 | Recurso             | Ruta |
 |----------------------|------|
 | Script principal    | [scripts/procesar_capec_entropia.py](scripts/procesar_capec_entropia.py) |
-| Script de gráficas  | [scripts/graficas_Hn_EAIC.py](scripts/graficas_Hn_EAIC.py) |
+| Script de gráficas  | [scripts/graficas_Hn_EIAC.py](scripts/graficas_Hn_EIAC.py) |
 | Dataset CAPEC       | [datasets/CAPEC/2000.csv](datasets/CAPEC/2000.csv) |
 | Dataset sintético   | [datasets/sintetico/dataset_sintetico_grande.csv](datasets/sintetico/dataset_sintetico_grande.csv) |
 | Dataset SR-BH       | [datasets/SR-BH/dataset_real - dataset_real_40k.csv](datasets/SR-BH/dataset_real%20-%20dataset_real_40k.csv) |
@@ -118,9 +118,9 @@ $$
 
 | Rango EIAC  | Relevancia |
 | ----------- | ---------- |
-| ≥ 0.66      | Alta       |
-| 0.33 – 0.66 | Media      |
-| < 0.33      | Baja       |
+| $0.66 \leq EIAC \leq 1$ | Alta |
+| $0.33 \leq EIAC < 0.66$ | Media |
+| $0 \leq EIAC < 0.33$ | Baja |
 
 
 ### Ejemplo ilustrativo
@@ -132,12 +132,12 @@ Supongamos un dataset de 100 filas. La tabla siguiente muestra cómo cambia la i
 | ----------------- | -------------------------- | ------ | ---- | ---- | -------- | -------- | ------------------------------------------------------------ |
 | `ID`              | 100 IDs distintos          | 1.00   | 1.00 | 1.00 | 0.00     | **0.00** | Identificador: alta entropía, pero nula relevancia analítica |
 | `Abstraction`     | Standard, Detailed, Meta   | 0.92   | 1.00 | 0.03 | 0.97     | **0.89** | Categórica con pocos niveles: alta relevancia                |
-| `Status`          | 80 % Draft, 20 % vacío     | 0.72   | 0.80 | 0.02 | 0.98     | **0.56** | Buena variación, penalizada por datos faltantes              |
+| `Status`          | 50 Draft, 30 Stable, 20 vacíos | 0.95 | 0.80 | 0.02 | 0.98 | **0.74** | Diversidad entre los datos disponibles, ajustada por completitud |
 | `Constant_Flag`   | Siempre "Standard"         | 0.00   | 1.00 | 0.01 | 0.99     | **0.00** | Sin variación: no aporta información                         |
 | `Mostly_Missing`  | 90 % vacío, resto disperso | 0.95   | 0.10 | 0.08 | 0.92     | **0.09** | $H_n$ alto, pero EIAC bajo por incompletitud                   |
 
 
-Este contraste es la razón de usar EIAC frente a la entropía pura permite distinguir columnas **realmente útiles** de columnas que solo parecen informativas.
+Este contraste muestra cómo EIAC complementa la entropía normalizada al considerar la completitud y la unicidad de cada columna.
 
 ---
 
@@ -148,8 +148,10 @@ Este contraste es la razón de usar EIAC frente a la entropía pura permite dist
 - [reportlab](https://www.reportlab.com/) *(opcional, para generar PDF)*
 - [matplotlib](https://matplotlib.org/) *(para gráficas comparativas)*
 
+Las versiones utilizadas se encuentran fijadas en `requirements.txt`:
+
 ```bash
-python3 -m pip install pandas reportlab matplotlib
+python3 -m pip install -r requirements.txt
 ```
 
 ---
@@ -188,11 +190,11 @@ Cada ejecución añade un timestamp (`YYYYMMDD_HHMMSS`) a los archivos de salida
 
 ## Gráficas comparativas $H_n(X)$ vs EIAC
 
-El script [scripts/graficas_Hn_EAIC.py](scripts/graficas_Hn_EAIC.py) genera visualizaciones para contrastar la entropía normalizada de Shannon con EIAC en los **tres escenarios** del TFM: CAPEC, sintético y SR-BH.
+El script [scripts/graficas_Hn_EIAC.py](scripts/graficas_Hn_EIAC.py) genera visualizaciones para contrastar la entropía normalizada de Shannon con EIAC en los **tres escenarios** del TFM: CAPEC, sintético y SR-BH.
 
 ### ¿Qué hace?
 
-1. **Carga los rankings EIAC** de cada escenario desde hojas de Google Sheets publicadas como CSV (columnas `Columna`, `Hn(X)` y `EIAC`).
+1. **Carga los rankings EIAC congelados** de cada escenario desde `datos/results/` (columnas `Columna`, `Hn(X)` y `EIAC`).
 2. **Gráficos de mancuerna (dumbbell)** — uno por escenario — que muestran, para cada columna, la distancia entre $H_n(X)$ (gris) y EIAC (teal). Permite ver de un vistazo qué columnas reduce EIAC respecto a Shannon.
 3. **Diagrama de dispersión resumen** — superpone los tres escenarios sobre el plano $H_n(X)$ vs EIAC, con la recta $y = x$ como referencia de “sin ajuste”. Los puntos por debajo de la diagonal indican que EIAC penalizó la columna (por unicidad, datos faltantes o ambos).
 4. **Empaqueta las figuras** en `graficas_eiac.zip` (PDF y PNG de cada gráfico).
@@ -202,10 +204,10 @@ El script [scripts/graficas_Hn_EAIC.py](scripts/graficas_Hn_EAIC.py) genera visu
 Desde la raíz del repositorio:
 
 ```bash
-python3 scripts/graficas_Hn_EAIC.py
+python3 scripts/graficas_Hn_EIAC.py
 ```
 
-Requiere conexión a internet para leer las hojas de cálculo. Las figuras se guardan en el directorio desde el que se ejecuta el comando.
+No requiere conexión a internet. Las figuras se generan a partir de los resultados utilizados en la memoria y se guardan en el directorio desde el que se ejecuta el comando.
 
 ### Salidas del script de gráficas
 
@@ -251,4 +253,4 @@ Los archivos `.tex` se generan como **material auxiliar** para documentos de inv
 
 ## Licencia y uso
 
-Proyecto académico del **Máster en Análisis y Visualización de Big Data — UNIR**. El catálogo CAPEC es propiedad de [The MITRE Corporation](https://www.mitre.org/) y se distribuye bajo sus condiciones de uso.# EIAC
+El código desarrollado por los autores se distribuye bajo la licencia MIT, disponible en [LICENSE](LICENSE). Los datasets y fuentes externas conservan sus propias condiciones de uso. El catálogo CAPEC pertenece a [The MITRE Corporation](https://www.mitre.org/), mientras que SR-BH 2020 Multilabel se encuentra publicado en Harvard Dataverse bajo CC0 1.0.
