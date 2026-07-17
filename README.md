@@ -277,3 +277,5 @@ El código desarrollado por los autores se distribuye bajo la licencia MIT, disp
 La información bibliográfica para citar esta versión del software se encuentra
 en [CITATION.cff](CITATION.cff). La versión utilizada para la entrega final del
 TFM está identificada con la etiqueta `v1.0.0`.
+
+
